@@ -17,11 +17,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Setup deb-s3
+        uses: usdot-fhwa-stol/actions/setup-deb-s3@main
       - name: Install dependencies
         run: |
           apt update
-          apt -y install debhelper devscripts equivs ruby
-          gem install deb-s3
           ./install_dependencies.sh
       - name: Build
         run: |
