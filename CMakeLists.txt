@@ -43,6 +43,7 @@ target_link_libraries (${PROJECT_NAME} PUBLIC
 
 # where to find our CMake modules
 set(CMAKE_MODULE_PATH "$ENV{CARMA_OPT_DIR}/cmake")
+include(Testing)
 include(InstallingGeneral)
 include(InstallingConfigs)
 include(Packing)
