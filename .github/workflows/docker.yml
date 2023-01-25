@@ -34,5 +34,3 @@ jobs:
           apt-get install -y jq python3-pip
           pip3 install gcovr
           /opt/carma/scripts/coverage.sh
-        run: |
-          ./build.sh
