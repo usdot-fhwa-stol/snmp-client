@@ -3,6 +3,7 @@
 {
 	"name": "CARMA build image",
 	"image" : "ghcr.io/usdot-fhwa-stol/carma-builds:latest",
+//	"image" : "carma_cmake_builder",
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},

@@ -17,16 +17,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup deb-s3
-        uses: usdot-fhwa-stol/actions/setup-deb-s3@main
       - name: Install dependencies
         run: |
           apt update
           ./install_dependencies.sh
       - name: Build
         run: |
-          ./build.sh
-
+          ./build.sh -c
+      - name: Setup deb-s3
+        uses: usdot-fhwa-stol/actions/setup-deb-s3@main
       - name: Upload .deb files
         run: |
           deb-s3 upload --codename develop --bucket ${{ env.AWS_BUCKET_NAME }} build/_packages/*.deb
+      - name: Coverage
+        run: |
+          apt-get install -y jq python3-pip
+          pip3 install gcovr
+          /opt/carma/scripts/coverage.sh
