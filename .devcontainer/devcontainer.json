@@ -17,7 +17,10 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-				"ms-vscode.cpptools-extension-pack"
+				"ms-vscode.cpptools-extension-pack",
+				"EditorConfig.EditorConfig",
+				"twxs.cmake",
+				"ms-vscode.cmake-tools"
 			]
 		}
 	}
@@ -25,3 +28,4 @@
 	// Uncomment to connect as an existing user other than the container default. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "devcontainer"
 }
+

@@ -1,0 +1,2 @@
+INPUT = include/ src/
+OUTPUT_DIRECTORY       = ./docs/
