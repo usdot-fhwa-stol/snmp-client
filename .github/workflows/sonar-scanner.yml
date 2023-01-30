@@ -31,7 +31,7 @@ jobs:
         # build-preparation steps        
         apt update
         ./install_dependencies.sh
-        build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} "build.sh -c"
+        build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} bash ./build.sh -c
     - name: Run coverage
       run: |
         apt-get install -y jq python3-pip
