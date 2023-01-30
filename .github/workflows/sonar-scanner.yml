@@ -14,11 +14,12 @@ jobs:
       image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
     env:
       BUILD_WRAPPER_OUT_DIR: bw_output # Directory where build-wrapper output will be placed
+      DEBIAN_FRONTEND: noninteractive
     steps:
-    - name: Install curl, zip, git
+    - name: Install curl, zip, git, gcovr
       run: |
         apt update
-        apt-get install -y curl zip git
+        apt-get install -y curl zip git gcovr
     - uses: actions/checkout@v3
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
@@ -29,13 +30,10 @@ jobs:
       # here goes your compilation wrapped with build-wrapper; See https://docs.sonarcloud.io/advanced-setup/languages/c-c-objective-c/#analysis-steps-using-build-wrapper for more information
       run: |
         # build-preparation steps        
-        apt update
         ./install_dependencies.sh
         build-wrapper-linux-x86-64 --out-dir ${{ env.BUILD_WRAPPER_OUT_DIR }} bash ./build.sh -c
     - name: Run coverage
       run: |
-        apt-get install -y jq python3-pip
-        pip3 install gcovr
         # assumes a src folder under the current folder and a build folder to place the JSON in
         gcovr --sonarqube build/coverage_sonar.xml -s --filter src
         # debug statements
