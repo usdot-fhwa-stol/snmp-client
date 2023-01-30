@@ -19,10 +19,10 @@ jobs:
       with:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
-    - name: Install curl and zip
+    - name: Install curl, zip, git
       run: |
         apt update
-        apt-get install -y curl zip
+        apt-get install -y curl zip git
     - name:  Install sonar-scanner and build-wrapper
       uses: sonarsource/sonarcloud-github-c-cpp@v1
     - name: Run build-wrapper
