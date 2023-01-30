@@ -42,6 +42,7 @@ jobs:
         echo $(pwd)
         ls -al
         ls -al ..
+        git status
     - name: Run sonar-scanner
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
