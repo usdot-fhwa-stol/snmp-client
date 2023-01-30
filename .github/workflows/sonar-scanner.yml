@@ -15,14 +15,14 @@ jobs:
     env:
       BUILD_WRAPPER_OUT_DIR: bw_output # Directory where build-wrapper output will be placed
     steps:
-    - uses: actions/checkout@v3
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
     - name: Install curl, zip, git
       run: |
         apt update
         apt-get install -y curl zip git
+    - uses: actions/checkout@v3
+      with:
+        # Disabling shallow clone is recommended for improving relevancy of reporting
+        fetch-depth: 0
     - name:  Install sonar-scanner and build-wrapper
       uses: sonarsource/sonarcloud-github-c-cpp@v1
     - name: Run build-wrapper
