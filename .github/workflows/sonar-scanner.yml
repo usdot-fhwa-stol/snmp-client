@@ -10,6 +10,8 @@ name: Main Workflow
 jobs:
   sonarcloud:
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
     env:
       BUILD_WRAPPER_OUT_DIR: bw_output # Directory where build-wrapper output will be placed
     steps:
