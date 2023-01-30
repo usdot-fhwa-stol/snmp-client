@@ -38,6 +38,9 @@ jobs:
         pip3 install gcovr
         # assumes a src folder under the current folder and a build folder to place the JSON in
         gcovr --sonarqube build/coverage_sonar.xml -s --filter src
+        # debug statements
+        echo $(pwd)
+        ls -al
     - name: Run sonar-scanner
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
