@@ -14,11 +14,11 @@ jobs:
       image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
     env:
       BUILD_WRAPPER_OUT_DIR: bw_output # Directory where build-wrapper output will be placed
-    steps:
-    - uses: actions/checkout@v3
-      with:
-        # Disabling shallow clone is recommended for improving relevancy of reporting
-        fetch-depth: 0
+#    steps:
+#    - uses: actions/checkout@v3
+#      with:
+#        # Disabling shallow clone is recommended for improving relevancy of reporting
+#        fetch-depth: 0
     - name: Install curl, zip, git
       run: |
         apt update
