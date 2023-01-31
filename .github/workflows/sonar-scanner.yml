@@ -9,12 +9,7 @@ on:
 name: Sonar Workflow
 jobs:
   sonarcloud:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
-    steps:
-    - name: Run sonar scan
-      uses: usdot-fhwa-stol/actions/sonar-scanner-cpp@sonar-scanner-cpp
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        sonarcloud-token: ${{ secrets.SONAR_TOKEN }}
+    uses: usdot-fhwa-stol/actions/workflows/sonar-scanner-cpp@sonar-scanner-cpp
+    secrets:
+      github-token: ${{ secrets.GITHUB_TOKEN }}
+      sonarcloud-token: ${{ secrets.SONAR_TOKEN }}
