@@ -11,7 +11,7 @@ jobs:
   sonarcloud:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/usdot-fhwa-stol/carma-builds:code_coverage
+      image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
     steps:
     - name: Run sonar scan
       uses: usdot-fhwa-stol/actions/sonar-scanner-cpp@sonar-scanner-cpp
