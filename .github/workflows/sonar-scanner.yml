@@ -9,7 +9,7 @@ on:
 name: Sonar Workflow
 jobs:
   sonarcloud:
-    uses: usdot-fhwa-stol/.github/workflows/sonar-scanner-cpp.yml@sonar-scanner-cpp
+    uses: usdot-fhwa-stol/actions/.github/workflows/sonar-scanner-cpp.yml@sonar-scanner-cpp
     secrets:
       github-token: ${{ secrets.GITHUB_TOKEN }}
       sonarcloud-token: ${{ secrets.SONAR_TOKEN }}
