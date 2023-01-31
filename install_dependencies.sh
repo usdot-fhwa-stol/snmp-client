@@ -6,4 +6,5 @@ if [ ! -z "${BUILD_ARCHITECTURE}" ]; then
     PACKAGE_ARCHITECTURE=":${BUILD_ARCHITECTURE}"
 fi
 
+apt-get update
 apt-get install -y libspdlog-dev${PACKAGE_ARCHITECTURE} libsnmp-dev${PACKAGE_ARCHITECTURE}

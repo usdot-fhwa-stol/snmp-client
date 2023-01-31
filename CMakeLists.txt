@@ -22,6 +22,7 @@ target_link_libraries (${PROJECT_NAME} PUBLIC
 
 include(CommonSource)
 include(Testing)
+include(CodeCoverage)
 include(InstallingGeneral)
 include(InstallingConfigs)
 include(Packing)
