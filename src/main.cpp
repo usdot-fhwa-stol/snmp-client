@@ -1,6 +1,6 @@
-#include "snmp_client/snmp_client.h"
+#include "snmp-client/snmp_client.h"
 
-using namespace traffic_signal_controller_service;
+using namespace fwha_stol::snmp_client;
 
 int main () {
 
