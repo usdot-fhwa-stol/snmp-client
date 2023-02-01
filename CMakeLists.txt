@@ -12,6 +12,7 @@ find_package(spdlog REQUIRED)
 # Added for using SPDLOG macros, please check SPDLOG macros logging
 add_definitions(-DSPDLOG_ACTIVE_LEVEL=SPDLOG_LEVEL_TRACE)
 find_library(NETSNMP "netsnmp")
+set (CPACK_DEBIAN_PACKAGE_DEPENDS libsnmp-dev)
 
 add_library(${PROJECT_NAME} SHARED)
 
