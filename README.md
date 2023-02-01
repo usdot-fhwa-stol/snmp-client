@@ -2,7 +2,7 @@ The SNMP client library provides a reusable interface for performing SNMP operat
 
 To use:
 * Ensure you have the CARMA apt repository in your list.
-* Run: ```apt-get install snmp_client```
+* Run: ```apt-get install snmp-client```
 
 ## Contact
 Please click on the CARMA logo below to visit the Federal Highway Adminstration(FHWA) CARMA website.
