@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(snmp_client_user_test
+	DESCRIPTION "SNMP client library usage"
 	VERSION 1.0.0
 )
 
@@ -16,3 +17,6 @@ target_link_libraries (${PROJECT_NAME} PUBLIC
 )
 
 include(CommonSource)
+include(InstallingGeneral)
+include(InstallingConfigs)
+include(Packing)
