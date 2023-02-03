@@ -4,28 +4,9 @@ on:
   pull_request:
   push:
 
-env:
-  AWS_ACCESS_KEY_ID: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
-  AWS_BUCKET_NAME: stol-apt-repository
-
 jobs:
   build-package:
-    runs-on: ubuntu-latest
-    container:
-      image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: |
-          apt update
-          ./install_dependencies.sh
-      - name: Build
-        run: |
-          ./build.sh
-      - name: Setup deb-s3
-        uses: usdot-fhwa-stol/actions/setup-deb-s3@main
-      - name: Upload .deb files
-        run: |
-          deb-s3 upload --codename develop --bucket ${{ env.AWS_BUCKET_NAME }} build/_packages/*.deb
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@cpp_module_build
+    secrets:
+      aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
