@@ -1,8 +1,17 @@
 The SNMP client library provides a reusable interface for performing SNMP operations.  Its primary use within CARMA is managing and controlling hardware in traffic cabinets and V2X roadside units (RSUs).
 
-To use:
+# CI Status
+
+These badges are for the default branch only.
+
+[![Build Workflow](https://github.com/usdot-fhwa-stol/snmp-client/actions/workflows/build.yml/badge.svg)](https://github.com/usdot-fhwa-stol/snmp-client/actions/workflows/build.yml)
+
+[![Sonar Workflow](https://github.com/usdot-fhwa-stol/snmp-client/actions/workflows/sonar-scanner.yml/badge.svg)](https://github.com/usdot-fhwa-stol/snmp-client/actions/workflows/sonar-scanner.yml)
+
+## Usage
+
 * Ensure you have the CARMA apt repository in your list.
-* Run: ```apt-get install snmp-client```
+* Run: ```apt-get install snmp-client-<soversion>```
 
 ## Concepts
 
