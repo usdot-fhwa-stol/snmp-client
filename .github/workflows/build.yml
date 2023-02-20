@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-package:
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@b6b7697affcec65e9ca04f801feed6bee290895f
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@main
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
