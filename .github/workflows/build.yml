@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-package:
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@ddfb9b021c0ff09ec38fd7857ded9e34ee2efe0d
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@debian_beta_packages
     with:
       build-image-tag: debian_version_match_so
     secrets:
