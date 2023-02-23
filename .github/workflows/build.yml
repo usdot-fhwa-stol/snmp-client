@@ -10,3 +10,11 @@ jobs:
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
+  build-package-arm:
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@support_arm_builds
+    with:
+      build-architecture: arm
+      build-image-tag: build_arm_ci  
+    secrets:
+      aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}

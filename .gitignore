@@ -1,3 +1,4 @@
 # these directories contain build artifacts
 build
+buildarmhf
 install
