@@ -6,12 +6,12 @@ on:
 
 jobs:
   build-package:
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@730a5f50f961ef8724cbe69e63b2d4125cdfb3a9
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@12aa13e9c1cd5b164aef336dc36a9d709928d777
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
   build-package-arm:
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@730a5f50f961ef8724cbe69e63b2d4125cdfb3a9
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@12aa13e9c1cd5b164aef336dc36a9d709928d777
     with:
       build-architecture: arm
       build-image-tag: build_arm_ci  
