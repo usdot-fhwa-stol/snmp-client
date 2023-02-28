@@ -6,15 +6,14 @@ on:
 
 jobs:
   build-package:
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@85c750e393a4742fedb9f97119b9448f6945cb35
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@main
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
   build-package-arm:
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@85c750e393a4742fedb9f97119b9448f6945cb35
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@main
     with:
       build-architecture: arm
-      build-image-tag: build_arm_ci  
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
