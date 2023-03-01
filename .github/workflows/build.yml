@@ -8,7 +8,7 @@ jobs:
   build-package:
     strategy:
       matrix:
-        architecture: [x64, armhf]
+        architecture: [x64, armhf, arm64]
     uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@builds_name_updates
     with:
       build-architecture: ${{ matrix.architecture }}
