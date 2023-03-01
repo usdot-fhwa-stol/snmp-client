@@ -9,7 +9,7 @@ on:
 name: Sonar Workflow
 jobs:
   sonarcloud:
-    uses: usdot-fhwa-stol/actions/.github/workflows/sonar-scanner-cpp.yml@builds_name_updates
+    uses: usdot-fhwa-stol/actions/.github/workflows/sonar-scanner-cpp.yml@main
     with:
       sonar-project-key: usdot-fhwa-stol_snmp-client
     secrets:
