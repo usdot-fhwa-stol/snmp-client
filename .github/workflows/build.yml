@@ -6,9 +6,12 @@ on:
 
 jobs:
   build-package:
+    strategy:
+      matrix:
+        architecture: [x64, armhf, arm64]
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/usdot-fhwa-stol/carma-builds:latest
+      image: ghcr.io/usdot-fhwa-stol/carma-builds-${{ matrix.architecture }}:latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3

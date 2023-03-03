@@ -1,5 +1,3 @@
 #!/bin/bash
 
-apt-get update
-# installs dependent packages as well
-apt-get install -y snmp-client-1
+${CARMA_OPT_DIR}/scripts/install_dependencies_script.sh snmp-client-1
