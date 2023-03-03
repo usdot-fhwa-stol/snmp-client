@@ -4,6 +4,8 @@ project(snmp_client_user_test
 	VERSION 1.0.0
 )
 
+set (PACKAGE_VERSION 1)
+
 # where to find our CMake modules
 set(CMAKE_MODULE_PATH "$ENV{CARMA_OPT_DIR}/cmake")
 include(CommonPaths)
