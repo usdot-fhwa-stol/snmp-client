@@ -8,7 +8,7 @@ jobs:
   build-package:
     strategy:
       matrix:
-        architecture: [x64, arm, armhf]
+        architecture: [x64, armhf, arm64]
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/usdot-fhwa-stol/carma-builds-${{ matrix.architecture }}:latest
