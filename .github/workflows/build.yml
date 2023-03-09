@@ -12,6 +12,7 @@ jobs:
     uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@main
     with:
       build-architecture: ${{ matrix.architecture }}
+      build-image-tag: stol_repo_management
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
