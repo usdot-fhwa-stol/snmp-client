@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         architecture: [x64, armhf, arm64]
-    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@fix_underscore
+    uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@main
     with:
       build-architecture: ${{ matrix.architecture }}
       build-image-tag: stol_repo_management
