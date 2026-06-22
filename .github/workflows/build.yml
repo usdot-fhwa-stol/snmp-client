@@ -8,10 +8,22 @@ jobs:
   build-package:
     strategy:
       matrix:
-        architecture: [x64, armhf, arm64]
+        include:
+          - architecture: x64
+            ubuntu: jammy
+            build: true
+          - architecture: armhf
+            ubuntu: jammy
+            build: true
+          - architecture: arm64
+            ubuntu: jammy
+            build: true
     uses: usdot-fhwa-stol/actions/.github/workflows/cpp-module-build.yml@main
     with:
+      build: ${{ matrix.build }}
       build-architecture: ${{ matrix.architecture }}
+      build-image-tag: ${{ matrix.ubuntu }}
+      component-name: ${{ matrix.ubuntu }}
     secrets:
       aws-access-key-id: ${{ secrets.APT_REPO_AWS_ACCESS_KEY_ID }}
       aws-secret-access-key: ${{ secrets.APT_REPO_AWS_SECRET_ACCESS_KEY }}
